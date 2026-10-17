@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://csvtbmce33rxj" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bphlka60a46nf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ca2osn1pjv5rr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
-size = Vector3(0.25908834, 0.018966675, 2000.082)
+size = Vector3(1.3338151, 0.06913376, 2.67739)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_17gy4"]
 size = Vector3(0.48101807, 0.29260254, 0.10531616)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
+size = Vector3(2.413681, 0.65563965, 1)
 
 [node name="principal" type="Node3D" unique_id=406489441]
 
@@ -16,16 +20,35 @@ size = Vector3(0.48101807, 0.29260254, 0.10531616)
 [node name="chao" type="StaticBody3D" parent="cenario" unique_id=387115077]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/chao" unique_id=1436540661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028185993, 0.008674622, 999.84344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012610674, 0.0317173, -0.00017213821)
 shape = SubResource("BoxShape3D_sx1ah")
 
 [node name="path-long2" parent="cenario/chao" unique_id=1230360904 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(6.54, 0, 0, 0, 6.304134, -1.7405449, 0, 1.7405449, 6.304134, 0, 0, 0)
+transform = Transform3D(6.54, 0, 0, 0, 6.54, 0, 0, 0, 6.54, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario" unique_id=1994177312]
+[node name="cerca" type="StaticBody3D" parent="cenario" unique_id=1994177312]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/StaticBody3D" unique_id=332733739]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/cerca" unique_id=332733739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004058838, 0.1461792, 0.0019683838)
 shape = SubResource("BoxShape3D_17gy4")
 
-[node name="fence2" parent="cenario/StaticBody3D" unique_id=1848755766 instance=ExtResource("2_0xm2m")]
+[node name="fence2" parent="cenario/cerca" unique_id=1848755766 instance=ExtResource("2_0xm2m")]
+
+[node name="cerca2" type="StaticBody3D" parent="cenario" unique_id=319420544]
+transform = Transform3D(1, 0, 0, 0, 0.999083, 0.042815477, 0, -0.042815477, 0.999083, 0.5363333, -0.027068138, 0.0047763884)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/cerca2" unique_id=2073919942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004058838, 0.1461792, 0.0019683838)
+shape = SubResource("BoxShape3D_17gy4")
+
+[node name="fence2" parent="cenario/cerca2" unique_id=447598162 instance=ExtResource("2_0xm2m")]
+
+[node name="casa" type="StaticBody3D" parent="cenario" unique_id=530730611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12701213, 0.058148563, -1.0404328)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/casa" unique_id=1167319090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5525284, 0.36968994, 0)
+shape = SubResource("BoxShape3D_d1tgx")
+
+[node name="building-type-a2" parent="cenario/casa" unique_id=516539397 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22276947, -0.008445799, 0.050975084)
