@@ -3,6 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://csvtbmce33rxj" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bphlka60a46nf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ca2osn1pjv5rr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dqp3ojxmx0oht" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://0xb08qqsbv2n" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-d.glb" id="5_7mycd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_272bh")
+
+[sub_resource type="Environment" id="Environment_kek77"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
 size = Vector3(1.3338151, 0.06913376, 2.67739)
@@ -13,7 +26,22 @@ size = Vector3(0.48101807, 0.29260254, 0.10531616)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
 size = Vector3(2.413681, 0.65563965, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
+radius = 0.22164917
+height = 0.44332886
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gy4"]
+radius = 0.18174744
+height = 0.36349487
+
 [node name="principal" type="Node3D" unique_id=406489441]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=949717562]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2027080078]
+environment = SubResource("Environment_kek77")
 
 [node name="cenario" type="Node3D" parent="." unique_id=1884054538]
 
@@ -52,3 +80,25 @@ shape = SubResource("BoxShape3D_d1tgx")
 
 [node name="building-type-a2" parent="cenario/casa" unique_id=516539397 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22276947, -0.008445799, 0.050975084)
+
+[node name="jogodo" type="CharacterBody3D" parent="." unique_id=1599309854]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="jogodo" unique_id=139922831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25498962, 0)
+shape = SubResource("CapsuleShape3D_sx1ah")
+
+[node name="character-female-f2" parent="jogodo" unique_id=1749861662 instance=ExtResource("4_lquwl")]
+transform = Transform3D(0.6449887, -0.0038005617, 0, 0.0038005617, 0.6449887, 0, 0, 0, 0.6449999, 0.52270794, 0, 0.47506595)
+
+[node name="Camera3D" type="Camera3D" parent="jogodo" unique_id=1025616680]
+transform = Transform3D(-0.98987114, 0.083443716, -0.11485973, 0.035328615, 0.92836803, 0.3699794, 0.13750467, 0.36217391, -0.92191243, 0.0853228, 0.45398235, 0.10756397)
+fov = 88.099106
+
+[node name="inimigo" type="CharacterBody3D" parent="." unique_id=1995300512]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo" unique_id=13128505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014942884, 0.27232623, -0.037628654)
+shape = SubResource("CapsuleShape3D_17gy4")
+
+[node name="character-female-d2" parent="inimigo" unique_id=1722124845 instance=ExtResource("5_7mycd")]
+transform = Transform3D(0.59, 0, 0, 0, 0.59, 0, 0, 0, 0.59, 0, 0, 0)
