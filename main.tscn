@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://csvtbmce33rxj" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bphlka60a46nf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ca2osn1pjv5rr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bgq6np1gu84ob" path="res://jogodo.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dqp3ojxmx0oht" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://0xb08qqsbv2n" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-d.glb" id="5_7mycd"]
 
@@ -82,6 +83,7 @@ shape = SubResource("BoxShape3D_d1tgx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22276947, -0.008445799, 0.050975084)
 
 [node name="jogodo" type="CharacterBody3D" parent="." unique_id=1599309854]
+script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogodo" unique_id=139922831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25498962, 0)
