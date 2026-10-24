@@ -83,17 +83,18 @@ shape = SubResource("BoxShape3D_d1tgx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22276947, -0.008445799, 0.050975084)
 
 [node name="jogodo" type="CharacterBody3D" parent="." unique_id=1599309854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18566895, 1.0900269, 1.0562439)
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogodo" unique_id=139922831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25498962, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210186, 0)
 shape = SubResource("CapsuleShape3D_sx1ah")
 
 [node name="character-female-f2" parent="jogodo" unique_id=1749861662 instance=ExtResource("4_lquwl")]
-transform = Transform3D(0.6449887, -0.0038005617, 0, 0.0038005617, 0.6449887, 0, 0, 0, 0.6449999, 0.52270794, 0, 0.47506595)
+transform = Transform3D(-0.6449911, 0.0033771964, -5.6387684e-08, 0.0033771964, 0.6449911, 0, 5.638691e-08, -2.9524388e-10, -0.6449999, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="jogodo" unique_id=1025616680]
-transform = Transform3D(-0.98987114, 0.083443716, -0.11485973, 0.035328615, 0.92836803, 0.3699794, 0.13750467, 0.36217391, -0.92191243, 0.0853228, 0.45398235, 0.10756397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0.76589966)
 fov = 88.099106
 
 [node name="inimigo" type="CharacterBody3D" parent="." unique_id=1995300512]
