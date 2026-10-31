@@ -34,7 +34,10 @@ size = Vector3(0.121159434, 0.17245483, 0.33068848)
 radius = 0.18174744
 height = 0.36349487
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kek77"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_bi2i4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wbou8"]
+radius = 0.4844802
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
 radius = 0.22164917
@@ -61,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012783945, 0.025979996, 0.5
 shape = SubResource("BoxShape3D_sx1ah")
 
 [node name="path-long2" parent="cenario/chao" unique_id=1230360904 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(17.999264, 0.03050485, -0.15451428, -0.08389389, 6.5399284, 0.009620582, 0.13910173, -0.0029102564, 19.999397, -0.0035691261, -0.29414606, 0.10215998)
+transform = Transform3D(17.999264, 0.03050485, -0.15451428, -0.08389389, 6.5399284, 0.009620582, 0.13910173, -0.0029102564, 19.999397, 0.5425564, -0.24454498, 0.08545613)
 
 [node name="cerca" type="StaticBody3D" parent="cenario" unique_id=1994177312]
 
@@ -103,9 +106,16 @@ shape = SubResource("CapsuleShape3D_17gy4")
 transform = Transform3D(-0.59, 0, -5.1579438e-08, 0, 0.59, 0, 5.1579438e-08, 0, -0.59, 0, 0, 0)
 
 [node name="Areadeteccao" type="Area3D" parent="inimigo" unique_id=1939828392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008313119, 0.17924273, 0.013219118)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo/Areadeteccao" unique_id=1933793508]
-shape = SubResource("SphereShape3D_kek77")
+shape = SubResource("SphereShape3D_bi2i4")
+
+[node name="Areacaptrura" type="Area3D" parent="inimigo" unique_id=496614144]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo/Areacaptrura" unique_id=245266610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009087622)
+shape = SubResource("SphereShape3D_wbou8")
 
 [node name="jogodo" type="CharacterBody3D" parent="." unique_id=1599309854 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18566895, 0.24936068, 2.0296478)
