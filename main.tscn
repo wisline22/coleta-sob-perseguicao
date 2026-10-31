@@ -206,12 +206,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1359005, 0, 0.20980132)
 script = ExtResource("10_4c57u")
 
 [node name="rotolopontuacao" type="Label" parent="HUD" unique_id=720338319]
-offset_left = 36.0
-offset_top = 21.0
-offset_right = 171.0
-offset_bottom = 66.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 40.0
 theme_override_font_sizes/font_size = 32
 text = "pontos:0"
+
+[node name="rotolotempo" type="Label" parent="HUD" unique_id=913638312]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 148.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 32
+text = "tempo:0"
 
 [connection signal="body_entered" from="Itens/Itiem" to="Itens/Itiem" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Itiem2" to="Itens/Itiem2" method="_on_body_entered"]
