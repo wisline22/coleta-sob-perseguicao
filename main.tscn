@@ -3,12 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://csvtbmce33rxj" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bphlka60a46nf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ca2osn1pjv5rr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://bgq6np1gu84ob" path="res://jogodo.gd" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://bgq6np1gu84ob" path="res://scripts/jogodo.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dqp3ojxmx0oht" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://0xb08qqsbv2n" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-d.glb" id="5_7mycd"]
-[ext_resource type="Script" uid="uid://cqg6baw8wci2x" path="res://inimigo.gd" id="6_kek77"]
-[ext_resource type="Script" uid="uid://boh6jjm67gsly" path="res://item.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://cqg6baw8wci2x" path="res://scripts/inimigo.gd" id="6_kek77"]
+[ext_resource type="Script" uid="uid://boh6jjm67gsly" path="res://scripts/item.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cc63al8l1y1eu" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
+[ext_resource type="Script" uid="uid://ysyv2mlm16dr" path="res://scripts/hud.gd" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -106,14 +107,15 @@ shape = SubResource("CapsuleShape3D_17gy4")
 transform = Transform3D(-0.59, 0, -5.1579438e-08, 0, 0.59, 0, 5.1579438e-08, 0, -0.59, 0, 0, 0)
 
 [node name="Areadeteccao" type="Area3D" parent="inimigo" unique_id=1939828392]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008313119, 0.17924273, 0.013219118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2605508, 0.17924273, 0.013219118)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo/Areadeteccao" unique_id=1933793508]
 shape = SubResource("SphereShape3D_bi2i4")
+disabled = true
 
-[node name="Areacaptrura" type="Area3D" parent="inimigo" unique_id=496614144]
+[node name="Areacaptrulha" type="Area3D" parent="inimigo" unique_id=496614144]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo/Areacaptrura" unique_id=245266610]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="inimigo/Areacaptrulha" unique_id=245266610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009087622)
 shape = SubResource("SphereShape3D_wbou8")
 
@@ -199,6 +201,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9516425, 0, 0.314304)
 
 [node name="ponto3" type="Marker3D" parent="pontos patrulha" unique_id=1249426517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1359005, 0, 0.20980132)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=17432976]
+script = ExtResource("10_4c57u")
+
+[node name="rotolopontuacao" type="Label" parent="HUD" unique_id=720338319]
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 171.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 32
+text = "pontos:0"
 
 [connection signal="body_entered" from="Itens/Itiem" to="Itens/Itiem" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Itiem2" to="Itens/Itiem2" method="_on_body_entered"]

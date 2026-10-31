@@ -24,7 +24,7 @@ func _physics_process(_delta: float) ->void:
 func _ready() -> void:
 	$Areadeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
 	$Areadeteccao.body_exited.connect(_ao_detectar_corpo_sair)
-	$Areacaptrura.body_entered.connect(_ao_capturar_corpo_entrar)
+	$Areacaptrulha.body_entered.connect(_ao_capturar_corpo_entrar)
 	
 func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo .is_in_group("player"):
