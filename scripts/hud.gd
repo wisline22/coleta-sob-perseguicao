@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func  _process(delta: float) -> void: 
-	
-	$rotolopontuacao.text ="pontos: " + str(GameManager.pontucao) 
-	$rotolotempo.text = "tempo: " + str(int(GameManager.tempo_decorrido))
+func _process(delta: float) -> void:
+	$RotuloPontuacao.text = "Pontos: " + str(GameManager.pontuacao)
+
+	$RotuloTempo.text = "Tempo: " + str(int(GameManager.tempo_decorrido))
